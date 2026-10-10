@@ -1,0 +1,22 @@
+# Python & Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+catboost_info/
+
+# Node & Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Operating System & Logs
+.DS_Store
+*.log
+.vscode/
+.idea/

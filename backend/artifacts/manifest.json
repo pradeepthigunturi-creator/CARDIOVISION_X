@@ -1,0 +1,1980 @@
+{
+  "dataset_info": {
+    "path": "/Users/kadambari/Downloads/CARDIOVISION X/data/z_alizadeh_sani.csv",
+    "total_records": 303,
+    "seed": 42,
+    "targets": [
+      "Cath",
+      "LAD",
+      "LCX",
+      "RCA"
+    ],
+    "validation_strategy": "Stratified 5-Fold Cross Validation + Held-out 20% Test Split"
+  },
+  "models": {
+    "Cath": {
+      "target": "Cath",
+      "target_display_name": "Overall CAD",
+      "selected_model": "CatBoost",
+      "feature_names": [
+        "Age",
+        "Weight",
+        "Length",
+        "Sex",
+        "BMI",
+        "DM",
+        "HTN",
+        "Current Smoker",
+        "EX-Smoker",
+        "FH",
+        "Obesity",
+        "CRF",
+        "CVA",
+        "Airway disease",
+        "Thyroid Disease",
+        "CHF",
+        "DLP",
+        "BP",
+        "PR",
+        "Edema",
+        "Weak Peripheral Pulse",
+        "Lung rales",
+        "Systolic Murmur",
+        "Diastolic Murmur",
+        "Typical Chest Pain",
+        "Dyspnea",
+        "Function Class",
+        "Atypical",
+        "Nonanginal",
+        "Exertional CP",
+        "LowTH Ang",
+        "Q Wave",
+        "St Elevation",
+        "St Depression",
+        "Tinversion",
+        "LVH",
+        "Poor R Progression",
+        "BBB",
+        "FBS",
+        "CR",
+        "TG",
+        "LDL",
+        "HDL",
+        "BUN",
+        "ESR",
+        "HB",
+        "K",
+        "Na",
+        "WBC",
+        "Lymph",
+        "Neut",
+        "PLT",
+        "EF-TTE",
+        "Region RWMA",
+        "VHD"
+      ],
+      "excluded_columns": [
+        "LAD",
+        "LCX",
+        "RCA",
+        "Cath"
+      ],
+      "candidate_evaluations": {
+        "RandomForest": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 43,
+            "negative": 18
+          },
+          "accuracy": 0.819672131147541,
+          "precision": 0.82,
+          "recall": 0.9534883720930233,
+          "f1": 0.8817204301075269,
+          "confusion_matrix": {
+            "tn": 9,
+            "fp": 9,
+            "fn": 2,
+            "tp": 41,
+            "matrix": [
+              [
+                9,
+                9
+              ],
+              [
+                2,
+                41
+              ]
+            ]
+          },
+          "roc_auc": 0.8488372093023255,
+          "brier_score": 0.14243072658781217,
+          "log_loss": 0.4469722342443633,
+          "cv_mean_f1": 0.9119,
+          "cv_mean_accuracy": 0.8719,
+          "cv_mean_roc_auc": 0.9257
+        },
+        "ExtraTrees": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 43,
+            "negative": 18
+          },
+          "accuracy": 0.819672131147541,
+          "precision": 0.82,
+          "recall": 0.9534883720930233,
+          "f1": 0.8817204301075269,
+          "confusion_matrix": {
+            "tn": 9,
+            "fp": 9,
+            "fn": 2,
+            "tp": 41,
+            "matrix": [
+              [
+                9,
+                9
+              ],
+              [
+                2,
+                41
+              ]
+            ]
+          },
+          "roc_auc": 0.8733850129198965,
+          "brier_score": 0.13384219801178013,
+          "log_loss": 0.41936581018140695,
+          "cv_mean_f1": 0.9118,
+          "cv_mean_accuracy": 0.8719,
+          "cv_mean_roc_auc": 0.9304
+        },
+        "GradientBoosting": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 43,
+            "negative": 18
+          },
+          "accuracy": 0.7213114754098361,
+          "precision": 0.7708333333333334,
+          "recall": 0.8604651162790697,
+          "f1": 0.8131868131868132,
+          "confusion_matrix": {
+            "tn": 7,
+            "fp": 11,
+            "fn": 6,
+            "tp": 37,
+            "matrix": [
+              [
+                7,
+                11
+              ],
+              [
+                6,
+                37
+              ]
+            ]
+          },
+          "roc_auc": 0.7842377260981912,
+          "brier_score": 0.18113254448535485,
+          "log_loss": 0.6313887906636279,
+          "cv_mean_f1": 0.8856,
+          "cv_mean_accuracy": 0.8384,
+          "cv_mean_roc_auc": 0.9066
+        },
+        "LogisticRegression": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 43,
+            "negative": 18
+          },
+          "accuracy": 0.8524590163934426,
+          "precision": 0.8695652173913043,
+          "recall": 0.9302325581395349,
+          "f1": 0.898876404494382,
+          "confusion_matrix": {
+            "tn": 12,
+            "fp": 6,
+            "fn": 3,
+            "tp": 40,
+            "matrix": [
+              [
+                12,
+                6
+              ],
+              [
+                3,
+                40
+              ]
+            ]
+          },
+          "roc_auc": 0.8888888888888888,
+          "brier_score": 0.11921271637723642,
+          "log_loss": 0.3856909774351869,
+          "cv_mean_f1": 0.8982,
+          "cv_mean_accuracy": 0.8555,
+          "cv_mean_roc_auc": 0.9191
+        },
+        "CatBoost": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 43,
+            "negative": 18
+          },
+          "accuracy": 0.8524590163934426,
+          "precision": 0.8695652173913043,
+          "recall": 0.9302325581395349,
+          "f1": 0.898876404494382,
+          "confusion_matrix": {
+            "tn": 12,
+            "fp": 6,
+            "fn": 3,
+            "tp": 40,
+            "matrix": [
+              [
+                12,
+                6
+              ],
+              [
+                3,
+                40
+              ]
+            ]
+          },
+          "roc_auc": 0.8682170542635659,
+          "brier_score": 0.12912807921004912,
+          "log_loss": 0.46334659746079504,
+          "cv_mean_f1": 0.9135,
+          "cv_mean_accuracy": 0.8759,
+          "cv_mean_roc_auc": 0.9323
+        }
+      },
+      "final_metrics": {
+        "sample_count": 61,
+        "class_distribution": {
+          "positive": 43,
+          "negative": 18
+        },
+        "accuracy": 0.8524590163934426,
+        "precision": 0.8695652173913043,
+        "recall": 0.9302325581395349,
+        "f1": 0.898876404494382,
+        "confusion_matrix": {
+          "tn": 12,
+          "fp": 6,
+          "fn": 3,
+          "tp": 40,
+          "matrix": [
+            [
+              12,
+              6
+            ],
+            [
+              3,
+              40
+            ]
+          ]
+        },
+        "roc_auc": 0.8682170542635659,
+        "brier_score": 0.12912807921004912,
+        "log_loss": 0.46334659746079504,
+        "cv_mean_f1": 0.9135,
+        "cv_mean_accuracy": 0.8759,
+        "cv_mean_roc_auc": 0.9323
+      },
+      "global_importance": [
+        {
+          "feature": "Typical Chest Pain",
+          "importance": 1.7646584793754754
+        },
+        {
+          "feature": "EF-TTE",
+          "importance": 0.6966500924233511
+        },
+        {
+          "feature": "Age",
+          "importance": 0.6015530649426103
+        },
+        {
+          "feature": "Region RWMA",
+          "importance": 0.3572193855979589
+        },
+        {
+          "feature": "ESR",
+          "importance": 0.349961395209105
+        },
+        {
+          "feature": "TG",
+          "importance": 0.3415855934237049
+        },
+        {
+          "feature": "FBS",
+          "importance": 0.3395228395170823
+        },
+        {
+          "feature": "HTN",
+          "importance": 0.2842435938160019
+        },
+        {
+          "feature": "BP",
+          "importance": 0.2624238008567794
+        },
+        {
+          "feature": "Tinversion",
+          "importance": 0.2374332534464529
+        },
+        {
+          "feature": "Atypical",
+          "importance": 0.20642559578629568
+        },
+        {
+          "feature": "CR",
+          "importance": 0.16441463696681402
+        },
+        {
+          "feature": "BMI",
+          "importance": 0.1498071075804414
+        },
+        {
+          "feature": "VHD",
+          "importance": 0.09983526144936589
+        },
+        {
+          "feature": "HB",
+          "importance": 0.08448188460006091
+        },
+        {
+          "feature": "Nonanginal",
+          "importance": 0.07631342197985563
+        },
+        {
+          "feature": "K",
+          "importance": 0.07439211277388491
+        },
+        {
+          "feature": "DM",
+          "importance": 0.07347910513708952
+        },
+        {
+          "feature": "HDL",
+          "importance": 0.07294512556496295
+        },
+        {
+          "feature": "PR",
+          "importance": 0.06166931203178432
+        },
+        {
+          "feature": "Lymph",
+          "importance": 0.05813187152973532
+        },
+        {
+          "feature": "LDL",
+          "importance": 0.05457855807765189
+        },
+        {
+          "feature": "Weight",
+          "importance": 0.04850734842395559
+        },
+        {
+          "feature": "Neut",
+          "importance": 0.048216932798062224
+        },
+        {
+          "feature": "FH",
+          "importance": 0.03659336706946299
+        },
+        {
+          "feature": "Dyspnea",
+          "importance": 0.03589782746465816
+        },
+        {
+          "feature": "Sex",
+          "importance": 0.03439733857249831
+        },
+        {
+          "feature": "PLT",
+          "importance": 0.02951023203002022
+        },
+        {
+          "feature": "WBC",
+          "importance": 0.028377227441453767
+        },
+        {
+          "feature": "BUN",
+          "importance": 0.025779249608199984
+        },
+        {
+          "feature": "Length",
+          "importance": 0.02305894353105661
+        },
+        {
+          "feature": "St Depression",
+          "importance": 0.017348719815079947
+        },
+        {
+          "feature": "Function Class",
+          "importance": 0.014267388845670099
+        },
+        {
+          "feature": "Na",
+          "importance": 0.013280585936460353
+        },
+        {
+          "feature": "Diastolic Murmur",
+          "importance": 0.012431882234208578
+        },
+        {
+          "feature": "DLP",
+          "importance": 0.00797914258690419
+        },
+        {
+          "feature": "BBB",
+          "importance": 0.006420082659971241
+        },
+        {
+          "feature": "Systolic Murmur",
+          "importance": 0.006257054877525559
+        },
+        {
+          "feature": "Current Smoker",
+          "importance": 0.005933513230840078
+        },
+        {
+          "feature": "Obesity",
+          "importance": 0.005214248592477047
+        },
+        {
+          "feature": "Q Wave",
+          "importance": 0.004973096281325946
+        },
+        {
+          "feature": "St Elevation",
+          "importance": 0.00346003668210903
+        },
+        {
+          "feature": "Thyroid Disease",
+          "importance": 0.0020963024232064195
+        },
+        {
+          "feature": "Lung rales",
+          "importance": 0.0018193069337581573
+        },
+        {
+          "feature": "Poor R Progression",
+          "importance": 0.0018010973485944426
+        },
+        {
+          "feature": "LVH",
+          "importance": 0.001581404252927574
+        },
+        {
+          "feature": "Edema",
+          "importance": 0.001401580720824646
+        },
+        {
+          "feature": "Airway disease",
+          "importance": 0.001237632877488942
+        },
+        {
+          "feature": "LowTH Ang",
+          "importance": 0.0005879020826137508
+        },
+        {
+          "feature": "CRF",
+          "importance": 0.0005600035502411082
+        },
+        {
+          "feature": "EX-Smoker",
+          "importance": 0.0004902749595726276
+        },
+        {
+          "feature": "CHF",
+          "importance": 0.00036456919941849563
+        },
+        {
+          "feature": "CVA",
+          "importance": 0.0
+        },
+        {
+          "feature": "Weak Peripheral Pulse",
+          "importance": 0.0
+        },
+        {
+          "feature": "Exertional CP",
+          "importance": 0.0
+        }
+      ],
+      "has_scaler": false
+    },
+    "LAD": {
+      "target": "LAD",
+      "target_display_name": "LAD Artery",
+      "selected_model": "ExtraTrees",
+      "feature_names": [
+        "Age",
+        "Weight",
+        "Length",
+        "Sex",
+        "BMI",
+        "DM",
+        "HTN",
+        "Current Smoker",
+        "EX-Smoker",
+        "FH",
+        "Obesity",
+        "CRF",
+        "CVA",
+        "Airway disease",
+        "Thyroid Disease",
+        "CHF",
+        "DLP",
+        "BP",
+        "PR",
+        "Edema",
+        "Weak Peripheral Pulse",
+        "Lung rales",
+        "Systolic Murmur",
+        "Diastolic Murmur",
+        "Typical Chest Pain",
+        "Dyspnea",
+        "Function Class",
+        "Atypical",
+        "Nonanginal",
+        "Exertional CP",
+        "LowTH Ang",
+        "Q Wave",
+        "St Elevation",
+        "St Depression",
+        "Tinversion",
+        "LVH",
+        "Poor R Progression",
+        "BBB",
+        "FBS",
+        "CR",
+        "TG",
+        "LDL",
+        "HDL",
+        "BUN",
+        "ESR",
+        "HB",
+        "K",
+        "Na",
+        "WBC",
+        "Lymph",
+        "Neut",
+        "PLT",
+        "EF-TTE",
+        "Region RWMA",
+        "VHD"
+      ],
+      "excluded_columns": [
+        "LAD",
+        "LCX",
+        "RCA",
+        "Cath"
+      ],
+      "candidate_evaluations": {
+        "RandomForest": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 36,
+            "negative": 25
+          },
+          "accuracy": 0.7868852459016393,
+          "precision": 0.7948717948717948,
+          "recall": 0.8611111111111112,
+          "f1": 0.8266666666666667,
+          "confusion_matrix": {
+            "tn": 17,
+            "fp": 8,
+            "fn": 5,
+            "tp": 31,
+            "matrix": [
+              [
+                17,
+                8
+              ],
+              [
+                5,
+                31
+              ]
+            ]
+          },
+          "roc_auc": 0.8511111111111112,
+          "brier_score": 0.16432487681073366,
+          "log_loss": 0.5086894016977359,
+          "cv_mean_f1": 0.8194,
+          "cv_mean_accuracy": 0.7727,
+          "cv_mean_roc_auc": 0.8363
+        },
+        "ExtraTrees": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 36,
+            "negative": 25
+          },
+          "accuracy": 0.7868852459016393,
+          "precision": 0.7948717948717948,
+          "recall": 0.8611111111111112,
+          "f1": 0.8266666666666667,
+          "confusion_matrix": {
+            "tn": 17,
+            "fp": 8,
+            "fn": 5,
+            "tp": 31,
+            "matrix": [
+              [
+                17,
+                8
+              ],
+              [
+                5,
+                31
+              ]
+            ]
+          },
+          "roc_auc": 0.8555555555555555,
+          "brier_score": 0.15286706263203886,
+          "log_loss": 0.48027846976035404,
+          "cv_mean_f1": 0.8354,
+          "cv_mean_accuracy": 0.7976,
+          "cv_mean_roc_auc": 0.8264
+        },
+        "GradientBoosting": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 36,
+            "negative": 25
+          },
+          "accuracy": 0.7868852459016393,
+          "precision": 0.8108108108108109,
+          "recall": 0.8333333333333334,
+          "f1": 0.821917808219178,
+          "confusion_matrix": {
+            "tn": 18,
+            "fp": 7,
+            "fn": 6,
+            "tp": 30,
+            "matrix": [
+              [
+                18,
+                7
+              ],
+              [
+                6,
+                30
+              ]
+            ]
+          },
+          "roc_auc": 0.8366666666666667,
+          "brier_score": 0.16844313075460707,
+          "log_loss": 0.5326673928733504,
+          "cv_mean_f1": 0.8111,
+          "cv_mean_accuracy": 0.7808,
+          "cv_mean_roc_auc": 0.8332
+        },
+        "LogisticRegression": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 36,
+            "negative": 25
+          },
+          "accuracy": 0.7213114754098361,
+          "precision": 0.7714285714285715,
+          "recall": 0.75,
+          "f1": 0.7605633802816901,
+          "confusion_matrix": {
+            "tn": 17,
+            "fp": 8,
+            "fn": 9,
+            "tp": 27,
+            "matrix": [
+              [
+                17,
+                8
+              ],
+              [
+                9,
+                27
+              ]
+            ]
+          },
+          "roc_auc": 0.8244444444444444,
+          "brier_score": 0.18062093919932132,
+          "log_loss": 0.5403439257869848,
+          "cv_mean_f1": 0.7514,
+          "cv_mean_accuracy": 0.7106,
+          "cv_mean_roc_auc": 0.773
+        },
+        "CatBoost": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 36,
+            "negative": 25
+          },
+          "accuracy": 0.7868852459016393,
+          "precision": 0.7948717948717948,
+          "recall": 0.8611111111111112,
+          "f1": 0.8266666666666667,
+          "confusion_matrix": {
+            "tn": 17,
+            "fp": 8,
+            "fn": 5,
+            "tp": 31,
+            "matrix": [
+              [
+                17,
+                8
+              ],
+              [
+                5,
+                31
+              ]
+            ]
+          },
+          "roc_auc": 0.8555555555555556,
+          "brier_score": 0.15624711714367664,
+          "log_loss": 0.483588252961072,
+          "cv_mean_f1": 0.8015,
+          "cv_mean_accuracy": 0.7645,
+          "cv_mean_roc_auc": 0.8167
+        }
+      },
+      "final_metrics": {
+        "sample_count": 61,
+        "class_distribution": {
+          "positive": 36,
+          "negative": 25
+        },
+        "accuracy": 0.7868852459016393,
+        "precision": 0.7948717948717948,
+        "recall": 0.8611111111111112,
+        "f1": 0.8266666666666667,
+        "confusion_matrix": {
+          "tn": 17,
+          "fp": 8,
+          "fn": 5,
+          "tp": 31,
+          "matrix": [
+            [
+              17,
+              8
+            ],
+            [
+              5,
+              31
+            ]
+          ]
+        },
+        "roc_auc": 0.8555555555555555,
+        "brier_score": 0.15286706263203886,
+        "log_loss": 0.48027846976035404,
+        "cv_mean_f1": 0.8354,
+        "cv_mean_accuracy": 0.7976,
+        "cv_mean_roc_auc": 0.8264
+      },
+      "global_importance": [
+        {
+          "feature": "Typical Chest Pain",
+          "importance": 0.10681179101546708
+        },
+        {
+          "feature": "Atypical",
+          "importance": 0.04826548471214129
+        },
+        {
+          "feature": "Region RWMA",
+          "importance": 0.03930524684760034
+        },
+        {
+          "feature": "HTN",
+          "importance": 0.02260459710269112
+        },
+        {
+          "feature": "Age",
+          "importance": 0.01697066819875664
+        },
+        {
+          "feature": "Tinversion",
+          "importance": 0.015660035392088583
+        },
+        {
+          "feature": "St Depression",
+          "importance": 0.015453651212043616
+        },
+        {
+          "feature": "Nonanginal",
+          "importance": 0.013252104608644179
+        },
+        {
+          "feature": "EF-TTE",
+          "importance": 0.013139182136861218
+        },
+        {
+          "feature": "DM",
+          "importance": 0.012147839446474485
+        },
+        {
+          "feature": "Diastolic Murmur",
+          "importance": 0.007975930989324715
+        },
+        {
+          "feature": "BP",
+          "importance": 0.007435564771797159
+        },
+        {
+          "feature": "PR",
+          "importance": 0.006357409741088457
+        },
+        {
+          "feature": "St Elevation",
+          "importance": 0.006187347250883343
+        },
+        {
+          "feature": "Sex",
+          "importance": 0.00576318907825002
+        },
+        {
+          "feature": "Neut",
+          "importance": 0.0055345666974982765
+        },
+        {
+          "feature": "VHD",
+          "importance": 0.005399211098188827
+        },
+        {
+          "feature": "ESR",
+          "importance": 0.004467173601865885
+        },
+        {
+          "feature": "Dyspnea",
+          "importance": 0.004392233049889759
+        },
+        {
+          "feature": "Lymph",
+          "importance": 0.00425187504542538
+        },
+        {
+          "feature": "DLP",
+          "importance": 0.0038773834637063228
+        },
+        {
+          "feature": "WBC",
+          "importance": 0.003449957768089096
+        },
+        {
+          "feature": "Q Wave",
+          "importance": 0.003211974573433483
+        },
+        {
+          "feature": "Lung rales",
+          "importance": 0.0031533639132090533
+        },
+        {
+          "feature": "Na",
+          "importance": 0.0030982852337515694
+        },
+        {
+          "feature": "BMI",
+          "importance": 0.0028511940428529656
+        },
+        {
+          "feature": "CR",
+          "importance": 0.0026410684535337313
+        },
+        {
+          "feature": "Weight",
+          "importance": 0.002515155775378894
+        },
+        {
+          "feature": "FH",
+          "importance": 0.00233588557210256
+        },
+        {
+          "feature": "Poor R Progression",
+          "importance": 0.002272028208270867
+        },
+        {
+          "feature": "Obesity",
+          "importance": 0.0021428122303013106
+        },
+        {
+          "feature": "Length",
+          "importance": 0.0020582112534709087
+        },
+        {
+          "feature": "EX-Smoker",
+          "importance": 0.0019513637343761816
+        },
+        {
+          "feature": "HB",
+          "importance": 0.001888766397907653
+        },
+        {
+          "feature": "TG",
+          "importance": 0.0018135042484006805
+        },
+        {
+          "feature": "Edema",
+          "importance": 0.0015981977960604092
+        },
+        {
+          "feature": "K",
+          "importance": 0.001546976137266014
+        },
+        {
+          "feature": "BUN",
+          "importance": 0.0014954930438334433
+        },
+        {
+          "feature": "FBS",
+          "importance": 0.0014491256891500908
+        },
+        {
+          "feature": "Function Class",
+          "importance": 0.0014311349677630688
+        },
+        {
+          "feature": "LDL",
+          "importance": 0.0013601311493477088
+        },
+        {
+          "feature": "Current Smoker",
+          "importance": 0.0012090300983674854
+        },
+        {
+          "feature": "Thyroid Disease",
+          "importance": 0.0011512058387641263
+        },
+        {
+          "feature": "Airway disease",
+          "importance": 0.001146179501838863
+        },
+        {
+          "feature": "HDL",
+          "importance": 0.0010841018179503122
+        },
+        {
+          "feature": "Systolic Murmur",
+          "importance": 0.0010517970469458744
+        },
+        {
+          "feature": "PLT",
+          "importance": 0.0009063920612315078
+        },
+        {
+          "feature": "LVH",
+          "importance": 0.00035210586856588297
+        },
+        {
+          "feature": "BBB",
+          "importance": 0.0003107482885802088
+        },
+        {
+          "feature": "CRF",
+          "importance": 0.0002616073535793913
+        },
+        {
+          "feature": "CVA",
+          "importance": 0.0001938167796343853
+        },
+        {
+          "feature": "CHF",
+          "importance": 0.00013513452381870445
+        },
+        {
+          "feature": "Weak Peripheral Pulse",
+          "importance": 0.00013354342007970398
+        },
+        {
+          "feature": "Exertional CP",
+          "importance": 0.0
+        },
+        {
+          "feature": "LowTH Ang",
+          "importance": 0.0
+        }
+      ],
+      "has_scaler": false
+    },
+    "LCX": {
+      "target": "LCX",
+      "target_display_name": "LCX Artery",
+      "selected_model": "LogisticRegression",
+      "feature_names": [
+        "Age",
+        "Weight",
+        "Length",
+        "Sex",
+        "BMI",
+        "DM",
+        "HTN",
+        "Current Smoker",
+        "EX-Smoker",
+        "FH",
+        "Obesity",
+        "CRF",
+        "CVA",
+        "Airway disease",
+        "Thyroid Disease",
+        "CHF",
+        "DLP",
+        "BP",
+        "PR",
+        "Edema",
+        "Weak Peripheral Pulse",
+        "Lung rales",
+        "Systolic Murmur",
+        "Diastolic Murmur",
+        "Typical Chest Pain",
+        "Dyspnea",
+        "Function Class",
+        "Atypical",
+        "Nonanginal",
+        "Exertional CP",
+        "LowTH Ang",
+        "Q Wave",
+        "St Elevation",
+        "St Depression",
+        "Tinversion",
+        "LVH",
+        "Poor R Progression",
+        "BBB",
+        "FBS",
+        "CR",
+        "TG",
+        "LDL",
+        "HDL",
+        "BUN",
+        "ESR",
+        "HB",
+        "K",
+        "Na",
+        "WBC",
+        "Lymph",
+        "Neut",
+        "PLT",
+        "EF-TTE",
+        "Region RWMA",
+        "VHD"
+      ],
+      "excluded_columns": [
+        "LAD",
+        "LCX",
+        "RCA",
+        "Cath"
+      ],
+      "candidate_evaluations": {
+        "RandomForest": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 24,
+            "negative": 37
+          },
+          "accuracy": 0.6229508196721312,
+          "precision": 0.5454545454545454,
+          "recall": 0.25,
+          "f1": 0.34285714285714286,
+          "confusion_matrix": {
+            "tn": 32,
+            "fp": 5,
+            "fn": 18,
+            "tp": 6,
+            "matrix": [
+              [
+                32,
+                5
+              ],
+              [
+                18,
+                6
+              ]
+            ]
+          },
+          "roc_auc": 0.6891891891891891,
+          "brier_score": 0.2155345930958279,
+          "log_loss": 0.6155064244077096,
+          "cv_mean_f1": 0.4392,
+          "cv_mean_accuracy": 0.6694,
+          "cv_mean_roc_auc": 0.7016
+        },
+        "ExtraTrees": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 24,
+            "negative": 37
+          },
+          "accuracy": 0.6721311475409836,
+          "precision": 0.6666666666666666,
+          "recall": 0.3333333333333333,
+          "f1": 0.4444444444444444,
+          "confusion_matrix": {
+            "tn": 33,
+            "fp": 4,
+            "fn": 16,
+            "tp": 8,
+            "matrix": [
+              [
+                33,
+                4
+              ],
+              [
+                16,
+                8
+              ]
+            ]
+          },
+          "roc_auc": 0.6903153153153153,
+          "brier_score": 0.21291103191201688,
+          "log_loss": 0.6106152353150879,
+          "cv_mean_f1": 0.4161,
+          "cv_mean_accuracy": 0.6443,
+          "cv_mean_roc_auc": 0.6985
+        },
+        "GradientBoosting": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 24,
+            "negative": 37
+          },
+          "accuracy": 0.6229508196721312,
+          "precision": 0.5238095238095238,
+          "recall": 0.4583333333333333,
+          "f1": 0.4888888888888889,
+          "confusion_matrix": {
+            "tn": 27,
+            "fp": 10,
+            "fn": 13,
+            "tp": 11,
+            "matrix": [
+              [
+                27,
+                10
+              ],
+              [
+                13,
+                11
+              ]
+            ]
+          },
+          "roc_auc": 0.6914414414414415,
+          "brier_score": 0.2534239712100859,
+          "log_loss": 0.7172243896209705,
+          "cv_mean_f1": 0.4625,
+          "cv_mean_accuracy": 0.6318,
+          "cv_mean_roc_auc": 0.6426
+        },
+        "LogisticRegression": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 24,
+            "negative": 37
+          },
+          "accuracy": 0.5737704918032787,
+          "precision": 0.45,
+          "recall": 0.375,
+          "f1": 0.4090909090909091,
+          "confusion_matrix": {
+            "tn": 26,
+            "fp": 11,
+            "fn": 15,
+            "tp": 9,
+            "matrix": [
+              [
+                26,
+                11
+              ],
+              [
+                15,
+                9
+              ]
+            ]
+          },
+          "roc_auc": 0.5788288288288288,
+          "brier_score": 0.29620803809168705,
+          "log_loss": 0.9009496236386156,
+          "cv_mean_f1": 0.4796,
+          "cv_mean_accuracy": 0.6241,
+          "cv_mean_roc_auc": 0.6612
+        },
+        "CatBoost": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 24,
+            "negative": 37
+          },
+          "accuracy": 0.6557377049180327,
+          "precision": 0.5882352941176471,
+          "recall": 0.4166666666666667,
+          "f1": 0.4878048780487805,
+          "confusion_matrix": {
+            "tn": 30,
+            "fp": 7,
+            "fn": 14,
+            "tp": 10,
+            "matrix": [
+              [
+                30,
+                7
+              ],
+              [
+                14,
+                10
+              ]
+            ]
+          },
+          "roc_auc": 0.7578828828828829,
+          "brier_score": 0.21098188567688975,
+          "log_loss": 0.6177521097382696,
+          "cv_mean_f1": 0.4624,
+          "cv_mean_accuracy": 0.6322,
+          "cv_mean_roc_auc": 0.6629
+        }
+      },
+      "final_metrics": {
+        "sample_count": 61,
+        "class_distribution": {
+          "positive": 24,
+          "negative": 37
+        },
+        "accuracy": 0.5737704918032787,
+        "precision": 0.45,
+        "recall": 0.375,
+        "f1": 0.4090909090909091,
+        "confusion_matrix": {
+          "tn": 26,
+          "fp": 11,
+          "fn": 15,
+          "tp": 9,
+          "matrix": [
+            [
+              26,
+              11
+            ],
+            [
+              15,
+              9
+            ]
+          ]
+        },
+        "roc_auc": 0.5788288288288288,
+        "brier_score": 0.29620803809168705,
+        "log_loss": 0.9009496236386156,
+        "cv_mean_f1": 0.4796,
+        "cv_mean_accuracy": 0.6241,
+        "cv_mean_roc_auc": 0.6612
+      },
+      "global_importance": [
+        {
+          "feature": "Age",
+          "importance": 0.0
+        },
+        {
+          "feature": "Weight",
+          "importance": 0.0
+        },
+        {
+          "feature": "Length",
+          "importance": 0.0
+        },
+        {
+          "feature": "Sex",
+          "importance": 0.0
+        },
+        {
+          "feature": "BMI",
+          "importance": 0.0
+        },
+        {
+          "feature": "DM",
+          "importance": 0.0
+        },
+        {
+          "feature": "HTN",
+          "importance": 0.0
+        },
+        {
+          "feature": "Current Smoker",
+          "importance": 0.0
+        },
+        {
+          "feature": "EX-Smoker",
+          "importance": 0.0
+        },
+        {
+          "feature": "FH",
+          "importance": 0.0
+        },
+        {
+          "feature": "Obesity",
+          "importance": 0.0
+        },
+        {
+          "feature": "CRF",
+          "importance": 0.0
+        },
+        {
+          "feature": "CVA",
+          "importance": 0.0
+        },
+        {
+          "feature": "Airway disease",
+          "importance": 0.0
+        },
+        {
+          "feature": "Thyroid Disease",
+          "importance": 0.0
+        },
+        {
+          "feature": "CHF",
+          "importance": 0.0
+        },
+        {
+          "feature": "DLP",
+          "importance": 0.0
+        },
+        {
+          "feature": "BP",
+          "importance": 0.0
+        },
+        {
+          "feature": "PR",
+          "importance": 0.0
+        },
+        {
+          "feature": "Edema",
+          "importance": 0.0
+        },
+        {
+          "feature": "Weak Peripheral Pulse",
+          "importance": 0.0
+        },
+        {
+          "feature": "Lung rales",
+          "importance": 0.0
+        },
+        {
+          "feature": "Systolic Murmur",
+          "importance": 0.0
+        },
+        {
+          "feature": "Diastolic Murmur",
+          "importance": 0.0
+        },
+        {
+          "feature": "Typical Chest Pain",
+          "importance": 0.0
+        },
+        {
+          "feature": "Dyspnea",
+          "importance": 0.0
+        },
+        {
+          "feature": "Function Class",
+          "importance": 0.0
+        },
+        {
+          "feature": "Atypical",
+          "importance": 0.0
+        },
+        {
+          "feature": "Nonanginal",
+          "importance": 0.0
+        },
+        {
+          "feature": "Exertional CP",
+          "importance": 0.0
+        },
+        {
+          "feature": "LowTH Ang",
+          "importance": 0.0
+        },
+        {
+          "feature": "Q Wave",
+          "importance": 0.0
+        },
+        {
+          "feature": "St Elevation",
+          "importance": 0.0
+        },
+        {
+          "feature": "St Depression",
+          "importance": 0.0
+        },
+        {
+          "feature": "Tinversion",
+          "importance": 0.0
+        },
+        {
+          "feature": "LVH",
+          "importance": 0.0
+        },
+        {
+          "feature": "Poor R Progression",
+          "importance": 0.0
+        },
+        {
+          "feature": "BBB",
+          "importance": 0.0
+        },
+        {
+          "feature": "FBS",
+          "importance": 0.0
+        },
+        {
+          "feature": "CR",
+          "importance": 0.0
+        },
+        {
+          "feature": "TG",
+          "importance": 0.0
+        },
+        {
+          "feature": "LDL",
+          "importance": 0.0
+        },
+        {
+          "feature": "HDL",
+          "importance": 0.0
+        },
+        {
+          "feature": "BUN",
+          "importance": 0.0
+        },
+        {
+          "feature": "ESR",
+          "importance": 0.0
+        },
+        {
+          "feature": "HB",
+          "importance": 0.0
+        },
+        {
+          "feature": "K",
+          "importance": 0.0
+        },
+        {
+          "feature": "Na",
+          "importance": 0.0
+        },
+        {
+          "feature": "WBC",
+          "importance": 0.0
+        },
+        {
+          "feature": "Lymph",
+          "importance": 0.0
+        },
+        {
+          "feature": "Neut",
+          "importance": 0.0
+        },
+        {
+          "feature": "PLT",
+          "importance": 0.0
+        },
+        {
+          "feature": "EF-TTE",
+          "importance": 0.0
+        },
+        {
+          "feature": "Region RWMA",
+          "importance": 0.0
+        },
+        {
+          "feature": "VHD",
+          "importance": 0.0
+        }
+      ],
+      "has_scaler": true
+    },
+    "RCA": {
+      "target": "RCA",
+      "target_display_name": "RCA Artery",
+      "selected_model": "LogisticRegression",
+      "feature_names": [
+        "Age",
+        "Weight",
+        "Length",
+        "Sex",
+        "BMI",
+        "DM",
+        "HTN",
+        "Current Smoker",
+        "EX-Smoker",
+        "FH",
+        "Obesity",
+        "CRF",
+        "CVA",
+        "Airway disease",
+        "Thyroid Disease",
+        "CHF",
+        "DLP",
+        "BP",
+        "PR",
+        "Edema",
+        "Weak Peripheral Pulse",
+        "Lung rales",
+        "Systolic Murmur",
+        "Diastolic Murmur",
+        "Typical Chest Pain",
+        "Dyspnea",
+        "Function Class",
+        "Atypical",
+        "Nonanginal",
+        "Exertional CP",
+        "LowTH Ang",
+        "Q Wave",
+        "St Elevation",
+        "St Depression",
+        "Tinversion",
+        "LVH",
+        "Poor R Progression",
+        "BBB",
+        "FBS",
+        "CR",
+        "TG",
+        "LDL",
+        "HDL",
+        "BUN",
+        "ESR",
+        "HB",
+        "K",
+        "Na",
+        "WBC",
+        "Lymph",
+        "Neut",
+        "PLT",
+        "EF-TTE",
+        "Region RWMA",
+        "VHD"
+      ],
+      "excluded_columns": [
+        "LAD",
+        "LCX",
+        "RCA",
+        "Cath"
+      ],
+      "candidate_evaluations": {
+        "RandomForest": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 23,
+            "negative": 38
+          },
+          "accuracy": 0.6885245901639344,
+          "precision": 0.6666666666666666,
+          "recall": 0.34782608695652173,
+          "f1": 0.45714285714285713,
+          "confusion_matrix": {
+            "tn": 34,
+            "fp": 4,
+            "fn": 15,
+            "tp": 8,
+            "matrix": [
+              [
+                34,
+                4
+              ],
+              [
+                15,
+                8
+              ]
+            ]
+          },
+          "roc_auc": 0.754004576659039,
+          "brier_score": 0.19727764216395377,
+          "log_loss": 0.579195432112949,
+          "cv_mean_f1": 0.3058,
+          "cv_mean_accuracy": 0.6233,
+          "cv_mean_roc_auc": 0.6884
+        },
+        "ExtraTrees": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 23,
+            "negative": 38
+          },
+          "accuracy": 0.7377049180327869,
+          "precision": 0.7333333333333333,
+          "recall": 0.4782608695652174,
+          "f1": 0.5789473684210527,
+          "confusion_matrix": {
+            "tn": 34,
+            "fp": 4,
+            "fn": 12,
+            "tp": 11,
+            "matrix": [
+              [
+                34,
+                4
+              ],
+              [
+                12,
+                11
+              ]
+            ]
+          },
+          "roc_auc": 0.791762013729977,
+          "brier_score": 0.18735099979031897,
+          "log_loss": 0.5544085838404014,
+          "cv_mean_f1": 0.3696,
+          "cv_mean_accuracy": 0.6689,
+          "cv_mean_roc_auc": 0.7074
+        },
+        "GradientBoosting": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 23,
+            "negative": 38
+          },
+          "accuracy": 0.7704918032786885,
+          "precision": 0.7647058823529411,
+          "recall": 0.5652173913043478,
+          "f1": 0.65,
+          "confusion_matrix": {
+            "tn": 34,
+            "fp": 4,
+            "fn": 10,
+            "tp": 13,
+            "matrix": [
+              [
+                34,
+                4
+              ],
+              [
+                10,
+                13
+              ]
+            ]
+          },
+          "roc_auc": 0.7837528604118993,
+          "brier_score": 0.17559414988987762,
+          "log_loss": 0.5434761109181738,
+          "cv_mean_f1": 0.3416,
+          "cv_mean_accuracy": 0.5779,
+          "cv_mean_roc_auc": 0.6177
+        },
+        "LogisticRegression": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 23,
+            "negative": 38
+          },
+          "accuracy": 0.6885245901639344,
+          "precision": 0.625,
+          "recall": 0.43478260869565216,
+          "f1": 0.5128205128205128,
+          "confusion_matrix": {
+            "tn": 32,
+            "fp": 6,
+            "fn": 13,
+            "tp": 10,
+            "matrix": [
+              [
+                32,
+                6
+              ],
+              [
+                13,
+                10
+              ]
+            ]
+          },
+          "roc_auc": 0.7448512585812358,
+          "brier_score": 0.2154201066138831,
+          "log_loss": 0.6667501496509043,
+          "cv_mean_f1": 0.5596,
+          "cv_mean_accuracy": 0.681,
+          "cv_mean_roc_auc": 0.6943
+        },
+        "CatBoost": {
+          "sample_count": 61,
+          "class_distribution": {
+            "positive": 23,
+            "negative": 38
+          },
+          "accuracy": 0.7213114754098361,
+          "precision": 0.6875,
+          "recall": 0.4782608695652174,
+          "f1": 0.5641025641025641,
+          "confusion_matrix": {
+            "tn": 33,
+            "fp": 5,
+            "fn": 12,
+            "tp": 11,
+            "matrix": [
+              [
+                33,
+                5
+              ],
+              [
+                12,
+                11
+              ]
+            ]
+          },
+          "roc_auc": 0.7814645308924485,
+          "brier_score": 0.1906729851579819,
+          "log_loss": 0.5608390970099861,
+          "cv_mean_f1": 0.424,
+          "cv_mean_accuracy": 0.6482,
+          "cv_mean_roc_auc": 0.6852
+        }
+      },
+      "final_metrics": {
+        "sample_count": 61,
+        "class_distribution": {
+          "positive": 23,
+          "negative": 38
+        },
+        "accuracy": 0.6885245901639344,
+        "precision": 0.625,
+        "recall": 0.43478260869565216,
+        "f1": 0.5128205128205128,
+        "confusion_matrix": {
+          "tn": 32,
+          "fp": 6,
+          "fn": 13,
+          "tp": 10,
+          "matrix": [
+            [
+              32,
+              6
+            ],
+            [
+              13,
+              10
+            ]
+          ]
+        },
+        "roc_auc": 0.7448512585812358,
+        "brier_score": 0.2154201066138831,
+        "log_loss": 0.6667501496509043,
+        "cv_mean_f1": 0.5596,
+        "cv_mean_accuracy": 0.681,
+        "cv_mean_roc_auc": 0.6943
+      },
+      "global_importance": [
+        {
+          "feature": "TG",
+          "importance": 0.16965517901303603
+        },
+        {
+          "feature": "WBC",
+          "importance": 0.16456098463539265
+        },
+        {
+          "feature": "ESR",
+          "importance": 0.04464903900911918
+        },
+        {
+          "feature": "Age",
+          "importance": 0.03769287855309926
+        },
+        {
+          "feature": "Neut",
+          "importance": 0.020618997563564452
+        },
+        {
+          "feature": "Weight",
+          "importance": 0.01634476743496416
+        },
+        {
+          "feature": "FBS",
+          "importance": 0.016094010148686697
+        },
+        {
+          "feature": "HDL",
+          "importance": 0.013441927691743969
+        },
+        {
+          "feature": "Length",
+          "importance": 0.010899141624345406
+        },
+        {
+          "feature": "BUN",
+          "importance": 0.006001351329284557
+        },
+        {
+          "feature": "BP",
+          "importance": 0.0037693433354989325
+        },
+        {
+          "feature": "PLT",
+          "importance": 0.003413808847311165
+        },
+        {
+          "feature": "Function Class",
+          "importance": 0.002433761069459599
+        },
+        {
+          "feature": "Lymph",
+          "importance": 0.002169640653088467
+        },
+        {
+          "feature": "Sex",
+          "importance": 0.0019551429179951517
+        },
+        {
+          "feature": "BMI",
+          "importance": 0.0016821738154308694
+        },
+        {
+          "feature": "Dyspnea",
+          "importance": 0.0013879018666766202
+        },
+        {
+          "feature": "EF-TTE",
+          "importance": 0.0013228385378829955
+        },
+        {
+          "feature": "DM",
+          "importance": 0.001218109710199299
+        },
+        {
+          "feature": "Region RWMA",
+          "importance": 0.0007593789115935264
+        },
+        {
+          "feature": "Typical Chest Pain",
+          "importance": 0.0007329117426912583
+        },
+        {
+          "feature": "Na",
+          "importance": 0.0004767191698991927
+        },
+        {
+          "feature": "K",
+          "importance": 0.0004499685820605113
+        },
+        {
+          "feature": "HTN",
+          "importance": 0.00041465469482720335
+        },
+        {
+          "feature": "Atypical",
+          "importance": 0.0003969901141388533
+        },
+        {
+          "feature": "Current Smoker",
+          "importance": 0.0003958662247319785
+        },
+        {
+          "feature": "FH",
+          "importance": 0.0003815135301453371
+        },
+        {
+          "feature": "VHD",
+          "importance": 0.00037699622373309254
+        },
+        {
+          "feature": "LDL",
+          "importance": 0.0002916516817555543
+        },
+        {
+          "feature": "PR",
+          "importance": 0.0002773621363267734
+        },
+        {
+          "feature": "St Depression",
+          "importance": 0.000228086211378957
+        },
+        {
+          "feature": "HB",
+          "importance": 0.0002137714349258104
+        },
+        {
+          "feature": "St Elevation",
+          "importance": 0.00018084331202042147
+        },
+        {
+          "feature": "CRF",
+          "importance": 0.00017102738553240394
+        },
+        {
+          "feature": "Tinversion",
+          "importance": 0.00016441863394954731
+        },
+        {
+          "feature": "Obesity",
+          "importance": 0.00013117347187244512
+        },
+        {
+          "feature": "BBB",
+          "importance": 0.00011829599840267647
+        },
+        {
+          "feature": "Nonanginal",
+          "importance": 0.0001129151165932331
+        },
+        {
+          "feature": "DLP",
+          "importance": 0.00010136597422416639
+        },
+        {
+          "feature": "LVH",
+          "importance": 9.280300998000135e-05
+        },
+        {
+          "feature": "CR",
+          "importance": 7.589842507498081e-05
+        },
+        {
+          "feature": "EX-Smoker",
+          "importance": 7.5104859395026e-05
+        },
+        {
+          "feature": "Q Wave",
+          "importance": 6.613784402487172e-05
+        },
+        {
+          "feature": "Systolic Murmur",
+          "importance": 3.3514322981173495e-05
+        },
+        {
+          "feature": "Diastolic Murmur",
+          "importance": 3.201558161244478e-05
+        },
+        {
+          "feature": "Poor R Progression",
+          "importance": 2.646275814121211e-05
+        },
+        {
+          "feature": "Weak Peripheral Pulse",
+          "importance": 2.0894736529173575e-05
+        },
+        {
+          "feature": "LowTH Ang",
+          "importance": 1.9377875990986513e-05
+        },
+        {
+          "feature": "Lung rales",
+          "importance": 1.1406165266022529e-05
+        },
+        {
+          "feature": "Edema",
+          "importance": 1.0669306838697673e-05
+        },
+        {
+          "feature": "CVA",
+          "importance": 9.378621588098525e-06
+        },
+        {
+          "feature": "Thyroid Disease",
+          "importance": 8.67055622769517e-06
+        },
+        {
+          "feature": "Airway disease",
+          "importance": 4.950624301300249e-06
+        },
+        {
+          "feature": "CHF",
+          "importance": 0.0
+        },
+        {
+          "feature": "Exertional CP",
+          "importance": 0.0
+        }
+      ],
+      "has_scaler": true
+    }
+  }
+}
